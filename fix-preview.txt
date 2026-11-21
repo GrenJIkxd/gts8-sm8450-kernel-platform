@@ -1,0 +1,11 @@
+```c
+static inline bool ss_is_vsync_enabled(struct samsung_display_driver_data *vdd)
+{
+	struct drm_crtc *crtc = GET_DRM_CRTC(vdd);
+
+	if (IS_ERR_OR_NULL(crtc))
+		return false;
+
+	return crtc->enabled;
+}
+```
